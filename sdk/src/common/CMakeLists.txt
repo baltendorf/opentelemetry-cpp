@@ -7,3 +7,8 @@ endif()
 
 add_library(opentelemetry_common ${COMMON_SRCS})
 target_link_libraries(opentelemetry_common Threads::Threads)
+
+install (TARGETS opentelemetry_common
+		 ARCHIVE DESTINATION lib
+		 LIBRARY DESTINATION lib
+		 RUNTIME DESTINATION bin)
