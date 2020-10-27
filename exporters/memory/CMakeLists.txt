@@ -4,6 +4,12 @@ add_library(opentelemetry_exporter_in_memory INTERFACE)
 
 target_include_directories(opentelemetry_exporter_in_memory INTERFACE include/)
 
+install(
+  DIRECTORY include/opentelemetry
+  DESTINATION include
+  FILES_MATCHING
+  PATTERN "*.h")
+
 if(BUILD_TESTING)
   add_executable(in_memory_span_data_test test/in_memory_span_data_test.cc)
   add_executable(in_memory_span_exporter_test

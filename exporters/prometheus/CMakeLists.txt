@@ -19,6 +19,12 @@ find_package(prometheus-cpp CONFIG REQUIRED)
 add_library(prometheus_exporter src/prometheus_collector.cc
                                 src/prometheus_exporter_utils.cc)
 
+install(
+  DIRECTORY include/opentelemetry
+  DESTINATION include
+  FILES_MATCHING
+  PATTERN "*.h")
+
 if(BUILD_TESTING)
   add_subdirectory(test)
 endif()

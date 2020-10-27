@@ -4,6 +4,12 @@ add_library(opentelemetry_exporter_otprotocol src/recordable.cc)
 target_link_libraries(opentelemetry_exporter_otprotocol
                       $<TARGET_OBJECTS:opentelemetry_proto>)
 
+install(
+  DIRECTORY include/opentelemetry
+  DESTINATION include
+  FILES_MATCHING
+  PATTERN "*.h")
+
 if(BUILD_TESTING)
   add_executable(recordable_test test/recordable_test.cc)
   target_link_libraries(

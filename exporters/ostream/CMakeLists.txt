@@ -3,6 +3,12 @@ include_directories(include)
 add_library(opentelemetry_exporter_ostream_metrics src/metrics_exporter.cc)
 add_library(opentelemetry_exporter_ostream_span src/span_exporter.cc)
 
+install(
+  DIRECTORY include/opentelemetry
+  DESTINATION include
+  FILES_MATCHING
+  PATTERN "*.h")
+
 if(BUILD_TESTING)
   add_executable(ostream_metrics_test test/ostream_metrics_test.cc)
   add_executable(ostream_span_test test/ostream_span_test.cc)
