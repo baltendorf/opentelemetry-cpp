@@ -9,6 +9,11 @@ install(
   FILES_MATCHING
   PATTERN "*.h")
 
+install (TARGETS opentelemetry_exporter_ostream_metrics, opentelemetry_exporter_ostream_span
+		 ARCHIVE DESTINATION lib
+		 LIBRARY DESTINATION lib
+		 RUNTIME DESTINATION bin)
+
 if(BUILD_TESTING)
   add_executable(ostream_metrics_test test/ostream_metrics_test.cc)
   add_executable(ostream_span_test test/ostream_span_test.cc)

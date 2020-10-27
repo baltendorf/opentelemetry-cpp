@@ -10,6 +10,11 @@ install(
   FILES_MATCHING
   PATTERN "*.h")
 
+install (TARGETS opentelemetry_exporter_in_memory
+		 ARCHIVE DESTINATION lib
+		 LIBRARY DESTINATION lib
+		 RUNTIME DESTINATION bin)
+		 
 if(BUILD_TESTING)
   add_executable(in_memory_span_data_test test/in_memory_span_data_test.cc)
   add_executable(in_memory_span_exporter_test
