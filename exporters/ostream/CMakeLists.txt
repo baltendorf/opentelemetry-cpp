@@ -9,7 +9,7 @@ install(
   FILES_MATCHING
   PATTERN "*.h")
 
-install (TARGETS opentelemetry_exporter_ostream_metrics, opentelemetry_exporter_ostream_span
+install (TARGETS opentelemetry_exporter_ostream_metrics opentelemetry_exporter_ostream_span
 		 ARCHIVE DESTINATION lib
 		 LIBRARY DESTINATION lib
 		 RUNTIME DESTINATION bin)
